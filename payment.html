@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>طرق الدفع - ROZZA BENYO</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#eee;font-family:Arial,sans-serif}
+.page{position:relative;width:min(471px,100vw);margin:0 auto;line-height:0}
+.page img{display:block;width:100%;height:auto}
+.hotspot{position:absolute;display:block;cursor:pointer;background:transparent;border:0;text-decoration:none}
+.hotspot:focus{outline:2px solid rgba(180,120,20,.8);outline-offset:2px}
+@media (min-width:472px){
+  .page{box-shadow:0 0 30px rgba(0,0,0,.18)}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <img src="payment-design.png" alt="طرق الدفع - ROZZA BENYO">
+
+  <!-- Back -->
+  <a class="hotspot" style="left:3%;top:0.8%;width:28%;height:6.8%" href="index.html" aria-label="رجوع"></a>
+
+  <!-- Orange Cash copy number -->
+  <button class="hotspot" style="left:15%;top:47.8%;width:70%;height:5.5%" onclick="copyNumber()" aria-label="نسخ رقم Orange Cash"></button>
+
+  <!-- Copy button -->
+  <button class="hotspot" style="left:16%;top:54.0%;width:68%;height:5.5%" onclick="copyNumber()" aria-label="نسخ الرقم"></button>
+
+  <!-- InstaPay -->
+  <a class="hotspot" style="left:11%;top:74.4%;width:78%;height:5.8%" href="https://ipn.eg/S/mahmoud.aaib1234/instapay/0XVBzg" target="_blank" rel="noopener" aria-label="ادفع الآن عبر InstaPay"></a>
+</div>
+
+<script>
+function copyNumber(){
+  const n="01290069368";
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(n).then(()=>alert("تم نسخ رقم Orange Cash"));
+  }else{
+    const t=document.createElement("textarea");
+    t.value=n; document.body.appendChild(t); t.select();
+    document.execCommand("copy"); t.remove();
+    alert("تم نسخ رقم Orange Cash");
+  }
+}
+</script>
+</body>
+</html>
